@@ -1,0 +1,157 @@
+.header__container {
+    background-color: #e2e2e2;
+}
+.header__content {
+    background-color: #ffffff;
+    height: 48px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.header__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-right: 360px;
+    color: #3b5bdb;
+}
+.header__input--search {
+    background-color: #ebebeb;
+    width: 480px;
+    height: 48px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+body {
+    background-color: #e2e2e2;
+}
+.main__container {
+    background-color: #e2e2e2;
+}
+
+.form__container {
+    background-color: #ffffff;
+    width: 65%;
+    border: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: 210px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin-top: 18px;
+    margin-bottom: 24px;
+}
+
+/*.title2 {
+    margin-bottom: 50px;
+    margin-right: 750px;
+}*/
+
+.form__input--text {
+    background-color: #ebebeb;
+    width: 540px;
+    height: 48px;
+    border: 0;
+    font-size: 16px;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+#input_title {
+    margin-right: 28px;
+}
+
+.form__input--priority {
+    background-color: #ebebeb;
+    width: 290px;
+    height: 48px;
+    border: 0;
+    font-size: 16px;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+.form__button--add-task {
+    background-color: #3b5bdb;
+    color: #ffffff;
+    width: 100%;
+    height: 48px;
+    border: #3b5bdb;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.tasks__container {
+    background-color: #ffffff;
+    width: 65%;
+    border: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: 210px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.task__item {
+    display: flex;
+    background-color: #f1f3f5;
+    width: 870px;
+    margin-top: 10px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    justify-content: space-between;
+}
+
+.task-info__container {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.task-type {
+    display: flex;
+    background-color: #000000;
+    width: 10px;
+    height: 10px;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.span-urgent {
+    background-color: #e40404;
+}
+.span-important {
+    background-color: #f3a703;
+}
+.span-normal {
+    background-color: #028302;
+}
+
+.task__button--remove-task {
+    background-color: #f1f3f5;
+    border: 0;
+    width: 16px;
+    height: 16px;
+    margin-right: 24px;
+    background-image: url("assets/trash-icon.svg");
+    background-repeat: no-repeat;
+}
