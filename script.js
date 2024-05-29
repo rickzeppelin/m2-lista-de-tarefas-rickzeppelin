@@ -21,6 +21,7 @@ if (firstRun) {
       tasks.splice(i, 1);
       renderElements(tasks);
     });
+    firstRun = false;
   }
 }*/
 
