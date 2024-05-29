@@ -11,7 +11,22 @@ const tasks = [
   {title: "Assistir a um documentário interessante", type: "Normal"},
 ];
 
-function createTaskItem(obj) {
+// isso aqui não funcionou como eu queria
+/*let firstRun = true;    
+if (firstRun) {
+  let lixo = document.querySelectorAll(".task__button--remove-task");
+  for (let i = 0; i < lixo.length; i++) {
+    lixo[i].addEventListener("click", function(event) {
+      event.preventDefault();
+      tasks.splice(i, 1);
+      renderElements(tasks);
+    });
+  }
+}*/
+
+// tive que fazer uma pequena gambiarra, receber o índice como parâmetro p/ saber qual item deletar ao clicar no botão
+// não consegui pensar num jeito de detectar o <p> que o botão está localizado p/ comparar com o title dos objetos...
+function createTaskItem(obj, index) {
   let li = document.createElement("li");
   let div = document.createElement("div");
   let span = document.createElement("span");
@@ -20,6 +35,12 @@ function createTaskItem(obj) {
   li.className = "task__item";
   div.className = "task-info__container";
   button.className = "task__button--remove-task";
+  //button.id = index.toString();
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+    tasks.splice(index, 1);
+    renderElements(tasks);
+  });
   let type = obj.type.toLowerCase();
   if (type == "urgente") {
     span.className = "task-type span-urgent";
@@ -39,21 +60,16 @@ function createTaskItem(obj) {
 function renderElements(arr) {
   let lista = document.querySelector(".tasks__list");
   let item = {};
+  while (lista.hasChildNodes()) {
+    lista.removeChild(lista.firstChild);
+  }
   for (let i = 0; i < arr.length; i++) {
-    item = createTaskItem(arr[i]);
+    item = createTaskItem(arr[i], i);
     lista.appendChild(item);
   }
 }
 
 const butt = document.querySelector(".form__button--add-task");
-let firstTime = true;
-
-function RenderSingleElement(novo) {
-  let lista = document.querySelector(".tasks__list");
-  let item = {};
-  item = createTaskItem(novo);
-  lista.appendChild(item);
-}
 
 function AddTask(event) {
   event.preventDefault();
@@ -71,12 +87,7 @@ function AddTask(event) {
   newTask.title = text.value;
   newTask.type = sel.options[sel.selectedIndex].value;
   tasks.push(newTask);
-  if (firstTime) {
-    renderElements(tasks);
-    firstTime = false;
-  } else {
-    RenderSingleElement(newTask);
-  }
+  renderElements(tasks);
 }
 
 butt.addEventListener("click", AddTask);
